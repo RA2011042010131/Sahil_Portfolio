@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Website</title>
+    <link rel="icon" href="images/images (1).png" type="image/x-icon">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="CSS/all.min.css">
+    <script
+      src="https://kit.fontawesome.com/7a4b62b0a4.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+  --lighting-color: #0089b7;
+  --dark-color: white;
+  --darker-color: #00b7b7;
+  --secondary-color: #fff700;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+body,
+html {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  line-height: 1.4;
+  scroll-behavior: smooth;
+  color: black;
+}
+body {
+  font-size: 1.4rem;
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+ul {
+  list-style: none;
+}
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--lighting-color);
+}
+
+section {
+  scroll-margin-top: 50px;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+nav ul {
+  display: flex;
+  gap: 1rem;
+}
+nav li {
+  font-size: 1.8rem;
+  border-bottom: 0.4rem transparent solid;
+  transition: 0.3s ease-in-out;
+}
+nav li:hover {
+  border-bottom: 0.4rem var(--secondary-color) solid;
+  transition: 0.3s ease-in-out;
+}
+.logo {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+#hero {
+  background: var(--dark-color);
+  padding: 4rem 0;
+  border-bottom: 4px solid var(--lighting-color);
+  max-height: 100vh;
+  
+}
+#hero .container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.hero_content {
+  display: grid;
+  place-items: center;
+}
+
+#hero h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.hi_text {
+  font-size: 6rem;
+  font-weight: bold;
+  color: var(--secondary-color);
+}
+.name_text {
+  font-size: 5rem;
+}
+
+#hero h2 {
+  font-size: 4rem;
+  font-weight: bold;
+
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: 0.15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */ /* Adjust as needed */
+  animation: typing 5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
+}
+
+/* Project Section */
+
+#project {
+  background: var(--darker-color);
+}
+
+#project h2 {
+  font-size: 6rem;
+  text-align: center;
+  padding: 2rem 0;
+}
+.project_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+.grid_item {
+  display: grid;
+  place-items: center;
+}
+
+.card {
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: 0.2s ease-in-out;
+}
+.card:hover {
+  transform: scale(1.05);
+  transition: 1s ease-in-out;
+}
+.card:hover img {
+  transform: scale(1.05);
+  transition: 0.3s ease-in-out;
+  opacity: 0.8;
+}
+.card:hover .card_content {
+  background: white;
+  color: var(--dark-color);
+  transform: translateY(0px);
+}
+
+.card_content {
+  padding: 2rem;
+  position: relative;
+  top: -6.5rem;
+  margin-bottom: -6.5rem;
+  transition: 0.5s ease-in-out;
+  transform: translateY(100px);
+}
+.card_content h3 {
+  text-align: center;
+}
+
+/* Contact Section */
+#contact {
+  background: var(--dark-color);
+}
+
+#contact h2 {
+  font-size: 6rem;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+#contact .container {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  justify-content: center;
+}
+
+.top_contact {
+  max-width: 800px;
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+}
+.contact_way {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.contact_way i {
+  font-size: 3rem;
+}
+.contact_way h3 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.bottom_contact {
+  max-width: 400px;
+  gap: 1rem;
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+}
+
+/* Footer */
+
+footer {
+  background: var(--darker-color);
+  padding: 2rem;
+  color: white;
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+/* Media Query */
+
+@media (max-width: 786px) {
+  html {
+    font-size: 40%;
+  }
+  #hero .container {
+    flex-direction: column;
+  }
+  .hero_image {
+    display: grid;
+    place-items: center;
+  }
+  #contact .container {
+    height: 70vh;
+  }
+}
+@media (max-width: 500px) {
+  html {
+    font-size: 32%;
+  }
+  #hero .container {
+    flex-direction: column;
+  }
+  .hero_image {
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+  }
+
+  #contact .container {
+    height: 25vh;
+  }
+}
+
+
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="container">
+        <div class="logo">Portfolio</div>
+        <ul>
+          <a href="#hero">
+            <li>Home</li>
+          </a>
+          <a href="#project">
+            <li>My Skills</li>
+          </a>
+          <a href="#portfolio">
+            <li>Previous Subject Portfolio</li>
+          </a>
+          <a href="#Achievements">
+            <li>My Achievements</li>
+          </a>
+          <a href="#contact">
+            <li>Contact</li>
+          </a>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="hero">
+        <div class="container">
+
+          <div class="hero_image animate__animated animate__bounceInLeft">
+            <span id="hero_img">
+            <img src="sahil123.png" alt="hero image" />
+          </span>
+          </div>
+          <div class="hero_content">
+            <h1>
+              <span class="hi_text">Hi</span> , I am
+              <span class="name_text">Sahil Anwar</span>
+            </h1>
+            <p>I Am From Bihar, Currently I am In My Fourth Year Of Enginnering In CSE, I Like To Code, I Enjoy Learning New Technologies And Implementing Them. Currently I Am Focused On Competitive Coding And Development And Exploring New Things Like Designing. I Am Also Very Interested In The Fields Like Technologies, Gaming Tech. And Networking, I Do Get Very Facinated By These.</p>
+            <h2>I am Frontend Developer from <br>
+               SRM Institute of Science and Technology.</h2>
+          </div>
+        </div>
+      </section>
+      <section id="project">
+        <h2>My Skills</h2>
+        <div class="container">
+          <div class="project_container">
+            <div class="grid_item">
+              <div class="card">
+                <img src="images/python-logo-only.png" alt="Python" />
+                <div class="card_content">
+                  <h3>PYTHON</h3>
+                </div>
+              </div>
+            </div>
+            <div class="grid_item">
+              <div class="card">
+                <img src="images/logo-mysql-170x115.png" alt="My SQL" />
+                <div class="card_content">
+                  <h3>MY SQL</h3>
+                </div>
+              </div>
+            </div>
+            <div class="grid_item">
+              <div class="card">
+                <img src="images/355-3559358_c-and-c-logo-hd-png-download.png" alt="Project 1" />
+                <div class="card_content">
+                  <h3>C, C++</h3>
+                </div>
+              </div>
+            </div>
+            <div class="grid_item">
+              <div class="card">
+                <img src="images/Front-end-logo-color@2x.png" alt="Project 4" />
+                <div class="card_content">
+                  <h3>FRONTEND</h3>
+                </div>
+              </div>
+            </div>
+           
+      </section>
+      <hr>
+      <!-- <section id="contact">
+        <div class="container">
+          <h2>Previous Subject Portfolio</h2>
+          <div class="top_contact">
+            <div class="contact_way">
+              <i class="fa-solid fa-file-pdf"></i>
+              <h3><a href="images/Portfolio_FLA.pdf" target="_blank">Formal Languages and Automata Theory</a></h3>
+            </div>
+    
+            <div class="contact_way"><br>
+              <i class="fa-solid fa-file-pdf"></i>
+              <h3><a href="images/Advance Programming Practice.pdf" target="_blank">Advance Programming Practice</a></h3>
+            </div>
+
+            <div class="contact_way"><br>
+              <i class="fa-solid fa-file-pdf"></i>
+              <h3><a href="images/CN portfoilio.pdf" target="_blank">Computer Network</a></h3>
+            </div>
+          
+        </div>
+      </section>
+      <hr>
+      <section id="project">
+        <h2>My Achievements</h2>
+        <div class="container">
+          <div class="project_container">
+            <div class="grid_item">
+              <div class="card">
+                <img src="images/AWS (1).jpg" alt="Project 1" />
+              </div>
+            </div>
+            <div class="grid_item">
+              <div class="card">
+                <img src="images/AWS security.png" alt="Project 1" />
+              </div>
+            </div>
+            <div class="grid_item">
+              <div class="card">
+                <img src="images/AWS badge.png" alt="Project 1" />
+              </div>
+            </div>
+            <div class="grid_item">
+              <div class="card">
+                <img src="images/cn.png" alt="Project 4" />
+
+              </div>
+            </div>
+            <div class="grid_item">
+              <div class="card">
+                <img src="images/ELAB.jpg" alt="Project 5" />
+
+              </div>
+            </div>
+ 
+            <div class="grid_item">
+              <div class="card">
+                <img src="images/ISRO.jpg" alt="Project 6" />
+
+              </div>
+          </div>
+        </div>
+      </section> -->
+      <hr>
+      <section id="contact">
+        <div class="container">
+          <h2>Contact Me...</h2>
+          <div class="top_contact">
+            <div class="contact_way">
+              <i class="fab fa-linkedin"></i>
+              <h3><a href="https://www.linkedin.com/in/sahil-anwar-3510ab152/" target="_blank">Linkedin</a></h3>
+            </div>
+    
+            <div class="contact_way">
+              <h3>Email: sa8037@srmist.edu.in</h3>
+            </div>
+          </div>
+          <div class="bottom_contact">
+            <div class="contact_way">
+              <i class="fab fa-github"></i>
+              <h3><a href="https://github.com/RA2011042010131"target="_blank">Github</a></h3>
+            </div>
+            <div class="contact_way">
+              <i class="fa fa-mobile"></i>
+              <h3>Mobile</h3>
+              <p>9521781961</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <hr><div class="container">All CopyRight &copy; Ather's Technology | Created by  Sahil Anwar</div>
+    </footer>
+  </body>
+</html>
